@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset='UTF-8' />
+  <title>Restaurante</title>
+  <link rel="stylesheet" type="text/css" href="styles/style.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="styles/fonts.css" media="screen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, initial-scale=1.0">
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="container container--flex">
+      <div class="logo-container column column--50">
+        <h1 class="logo">Restaurante Tex-Mex</h1>
+      </div>
+      <div class="main-header__contactInfo column column--50">
+        <p class="main-header__contactInfo__phone">
+          <span class="icon-phone">666666666</span>
+        </p>
+        <p class="main-header__contactInfo__address">
+          <span class="icon-location">Vigo</span>
+        </p>
+      </div>
+    </div>
+  </header>
+  <nav class="main-nav">
+    <div class="container container-flex">
+      <span class="icon-menu" id="btnmenu"></span>
+      <ul class="menu" id="menu">
+        <li class="menu__item"><a href="index.html" class="menu__link menu__link--select">Inicio</a></li>
+        <li class="menu__item"><a href="nosotros.html" class="menu__link">Nosotros</a></li>
+        <li class="menu__item"><a href="galeria.html" class="menu__link">Galería</a></li>
+        <li class="menu__item"><a href="contacto.html" class="menu__link">Contacto</a></li>
+        <li class="menu__item"><a href="login.php" class="menu__link">Área de pedidos</a></li>
+      </ul>
+      <div class="social-icon">
+        <a href="https://www.facebook.com/" target="_blank" class="social-icon__link"><span
+            class="icon-facebook"></span></a>
+        <a href="https://twitter.com/home" target="_blank" class="social-icon__link"><span
+            class="icon-twitter"></span></a>
+        <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" class="social-icon__link"><span
+            class="icon-mail"></span></a>
+      </div>
+    </div>
+  </nav>
+  <section class="banner">
+    <img src="assets/img/banner.jpg" alt="" class="banner__img">
+    <div class="banner__content">Prueba nuestras delicias de la gastronomía mexicana.</div>
+  </section>
+  <main class="main">
+    <section class="group group--color">
+      <div class="container">
+        <h2 class="main__title">Bienvenido a tu restaurante</h2>
+        <p class="main__txt">Si el picante y las especias mexicanas son lo tuyo, visita nuestras instalaciones. Contamos
+          con una carta variada y a buen precio.</p>
+      </div>
+    </section>
+    <section class="main__about__description">
+      <div class="container container--flex">
+        <div class="column column--50">
+          <img src="assets/img/food1.jpg" alt="">
+        </div>
+        <div class="column column--50">
+          <h3 class="column__title">Expertos en comida mexicana.</h3>
+          <p class="column__txt">¿Quieres contarnos tu experiencia? Contacta con nostros.</p>
+          <a href="" class="btn btn--contact">Contacto</a>
+        </div>
+      </div>
+    </section>
+    <section class="group today-special">
+      <h2 class="group__title">Nuestras especialidades</h2>
+      <div class="container container--flex">
+        <div class="column column--50-25">
+          <img src="assets/img/plate1.jpg" class="today-special__img">
+          <div class="today-special__title">Chile en nogada</div>
+          <div class="total-special__price">5,50 €</div>
+        </div>
+        <div class="column column--50-25">
+          <img src="assets/img/plate2.jpg" class="today-special__img">
+          <div class="today-special__title">Nachos</div>
+          <div class="total-special__price">3,50 €</div>
+        </div>
+        <div class="column column--50-25">
+          <img src="assets/img/plate3.jpg" class="today-special__img">
+          <div class="today-special__title">Tacos al pastor</div>
+          <div class="total-special__price">6,90 €</div>
+        </div>
+        <div class="column column--50-25">
+          <img src="assets/img/plate4.jpg" class="today-special__img">
+          <div class="today-special__title">Fajitas</div>
+          <div class="total-special__price">4,00 €</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="main-footer">
+    <div class="container container--flex">
+      <div class="column column--33">
+        <h2 class="column__title">Visítanos</h2>
+        <p class="column__txt"><span class="icon-location">Vigo, 12</span></p>
+      </div>
+      <div class="column column--33">
+        <h2 class="column__title">Contáctanos</h2>
+        <p class="column__txt"><span class="icon-phone">666666666</span></p>
+        <p class="column__txt">
+          <span class="icon-mail">default@default.com</span>
+        </p>
+      </div>
+      <div class="column column--33">
+        <h2 class="column__title">Sígenos en nuestras redes</h2>
+        <p class="column__txt"><a href="https://www.facebook.com/" class="icon-facebook">Facebook</a></p>
+        <p class="column__txt"><a href="https://twitter.com/home" class="icon-twitter">Twitter</a></p>
+        <p class="column__txt"><a href="https://mail.google.com/mail/u/0/#inbox" class="icon-youtube">Youtube</a></p>
+      </div>
+    </div>
+    <p class="copy">©2022 | Restaurante Tex-Mex. Todos los derechos reservados.</p>
+  </footer>
+</body>
+
+</html>
