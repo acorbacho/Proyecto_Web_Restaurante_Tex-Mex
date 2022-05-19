@@ -1,9 +1,8 @@
 class Plate {
   constructor(propierties) {
     this.name = propierties.name
-    this.size = propierties.size
     this.amount = propierties.amount
-    this.this.ingredient_5 = propierties.ingredient_5 = propierties.ingredient_0
+    this.ingredient_0 = propierties.ingredient_0
     this.ingredient_1 = propierties.ingredient_1
     this.ingredient_2 = propierties.ingredient_2
     this.ingredient_3 = propierties.ingredient_3
