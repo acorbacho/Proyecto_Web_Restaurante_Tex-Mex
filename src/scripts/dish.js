@@ -1,4 +1,4 @@
-class Plate {
+class Dish {
   constructor(propierties) {
     this.name = propierties.name
     this.amount = propierties.amount
