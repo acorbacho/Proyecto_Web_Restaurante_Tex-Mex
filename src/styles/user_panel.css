@@ -1,0 +1,119 @@
+.dishes {
+  border: solid 2px orangered;
+  border-radius: 10px;
+  width: 450px;
+  background-color: rgba(173, 65, 32, 0.719);
+  margin: 10px;
+  padding: 10px;
+}
+
+h2.group__title {
+  margin: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(34, 34, 34, 0.8);
+  margin-left: 0px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8em;
+  margin: 2px;
+  margin-left: 0px;
+  border: solid 2px orangered;
+  width: 100%;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.row img {
+  width: 12%;
+  object-fit: cover;
+  margin-left: 1%;
+}
+
+.btn--dishes {
+  margin-right: 2%;
+  cursor: pointer;
+  border: none;
+}
+
+.dishes p {
+  margin-left: 10px;
+}
+
+main .container--flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.cart {
+  border: solid 2px orangered;
+  border-radius: 10px;
+  width: 300px;
+  background-color: rgba(153, 137, 132, 0.3);
+  text-align: center;
+  margin: 10px;
+  align-self: flex-start;
+}
+
+.cart__title {
+  background-color: rgba(153, 137, 132, 0.6);
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.cart__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart__item {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  justify-content: space-between;
+}
+
+.cart__item__remove {
+  position: relative;
+  bottom: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cart__item__price {
+  position: relative;
+  left: 50px;
+}
+
+.cart__total {
+  background-color: rgba(153, 137, 132, 0.6);
+  border-radius: 10px;
+  text-align: start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-weight: bold;
+}
+
+.btn--cart {
+  border: none;
+  cursor: pointer;
+}
+
+.euros {
+  margin-left: 2px;
+}
+
+
+@media screen and (min-width:720px) {
+  .dishes {
+    width: 600px;
+  }
+}
