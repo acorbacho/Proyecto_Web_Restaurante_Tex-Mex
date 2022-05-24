@@ -1,0 +1,61 @@
+.formulario {
+  padding: 10px;
+  padding-top: 0;
+  margin: auto;
+}
+
+.formulario__label,
+.formulario__input-txt,
+.formulario__textarea,
+.link {
+  display: block;
+  width: 100%;
+  margin: 5px;
+}
+
+.formulario__input-txt {
+  padding: 5px;
+}
+
+.formulario__btn {
+  cursor: pointer;
+  font-size: 0.75em;
+  border: none;
+  display: inline;
+  margin: 5px;
+  width: 100%;
+}
+
+.link {
+  text-decoration: none;
+  color: orangered;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.banner__img {
+  display: none;
+}
+
+.login {
+  margin-top: 365px;
+  margin-bottom: 172px;
+}
+
+h1.logo,
+.icon-phone,
+.icon-location {
+  color: black;
+}
+
+@media screen and (min-width:960px) {
+  .formulario__btn {
+    width: 100%;
+  }
+
+  .formulario__label,
+  .formulario__input-txt,
+  .formulario__textarea {
+    width: 100%;
+  }
+}
