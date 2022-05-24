@@ -2,7 +2,7 @@
   border: solid 2px orangered;
   border-radius: 10px;
   width: 450px;
-  background-color: rgba(173, 65, 32, 0.719);
+  background-color: rgba(228, 99, 39, 0.5);
   margin: 10px;
   padding: 10px;
 }
@@ -11,7 +11,7 @@
   border: solid 2px orangered;
   border-radius: 10px;
   width: 450px;
-  background-color: rgba(173, 65, 32, 0.719);
+  background-color: rgba(228, 99, 39, 0.5);
   margin: 10px;
   padding: 10px;
   align-self: flex-start;
@@ -46,7 +46,7 @@
   flex-direction: row;
   border-top: solid 2px orangered;
   margin-left: 0px;
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 0.8em;
   margin: 2px;
@@ -126,5 +126,4 @@ main .container--flex {
     position: relative;
     right: 10%
   }
-
 }
