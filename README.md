@@ -1,4 +1,4 @@
-# Proyecto Restaurante Tex-Mex
+# Proyecto Web Restaurante Tex-Mex
 
 ## Descripción general
 
