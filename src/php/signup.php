@@ -1,6 +1,6 @@
 <?php
 // Llamada al archivo de conexión.
-include("conection.php");
+include("connection.php");
 // Recibimos los datos del formulario y los almacenamos en variables.
 $username = $_POST["username"];
 $password = $_POST["password"];
