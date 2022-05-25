@@ -1,6 +1,6 @@
 # Proyecto Restaurante Tex-Mex
 
-## Descripción inicial
+## Descripción general
 
 Sitio web ambientado en un restaurante de comida mexicana con las siguientes
 páginas o áreas:
