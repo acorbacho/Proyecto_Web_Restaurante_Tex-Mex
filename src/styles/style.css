@@ -199,7 +199,7 @@ h6 {
   text-align: center;
   position: absolute;
   z-index: 1500;
-  top: 68%;
+  top: 65%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   font-size: 1.5em;
@@ -292,6 +292,9 @@ h6 {
 
 .main-footer [class*="icon-"] {
   color: white;
+}
+
+.main-footer a {
   text-decoration: none;
 }
 
@@ -431,7 +434,7 @@ h6 {
 
 @media screen and (min-width:1024px) {
   .container {
-    width: 1000px;
+    width: 950px;
   }
 
   .main-header__contactInfo__phone,

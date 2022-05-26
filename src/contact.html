@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset='UTF-8' />
+  <title>Contacto</title>
+  <link rel="stylesheet" type="text/css" href="styles/style.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="styles/fonts.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="styles/contact.css" media="screen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, initial-scale=1.0">
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="container container--flex">
+      <div class="logo-container column column--50">
+        <h1 class="logo">Restaurante Tex-Mex</h1>
+      </div>
+      <div class="main-header__contactInfo column column--50">
+        <p class="main-header__contactInfo__phone">
+          <span class="icon-phone">999 000 000</span>
+        </p>
+        <p class="main-header__contactInfo__address">
+          <span class="icon-location">Vigo, 12</span>
+        </p>
+      </div>
+    </div>
+  </header>
+  <nav class="main-nav">
+    <div class="container container-flex">
+      <span class="icon-menu" id="btnmenu"></span>
+      <ul class="menu" id="menu">
+        <li class="menu__item"><a href="index.html" class="menu__link">Inicio</a></li>
+        <li class="menu__item"><a href="about.html" class="menu__link">Nosotros</a></li>
+        <li class="menu__item"><a href="gallery.html" class="menu__link">Galería</a></li>
+        <li class="menu__item"><a href="contact.html" class="menu__link menu__link--select">Contacto</a></li>
+        <li class="menu__item"><a href="login.html" class="menu__link">Área de pedidos</a></li>
+      </ul>
+      <div class="social-icon">
+        <a href="https://www.facebook.com/" target="_blank" class="social-icon__link"><span
+            class="icon-facebook"></span></a>
+        <a href="https://twitter.com/home" target="_blank" class="social-icon__link"><span
+            class="icon-twitter"></span></a>
+        <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" class="social-icon__link"><span
+            class="icon-mail"></span></a>
+      </div>
+    </div>
+  </nav>
+  <section class="banner">
+    <img src="assets/img/banner-contact.jpg" alt="" class="banner__img">
+    <div class="banner__content">Déjanos tu opinión.</div>
+  </section>
+  <main class="main">
+    <section class="group contact">
+      <h2 class="group__title">Contáctanos</h2>
+      <div class="container container--flex">
+        <div class="contact-information column column--50">
+          <h3 class="column__title">Información de contacto.</h3>
+          <p class="column__txt">
+            <spain class="icon-phone"></spain> Teléfono 1: 999 000 000
+          </p>
+          <p class="column__txt">
+            <spain class="icon-phone"></spain> Teléfono 2: 999 000 001
+          </p>
+          <p class="column__txt">
+            <spain class="icon-location"></spain> Vigo, 12
+          </p>
+          <p class="column__txt">
+            <spain class="icon-mail"></spain> default@default.com
+          </p>
+          <div class="social-icon">
+            <a href="https://www.facebook.com/" target="_blank" class="social-icon__link"><span
+                class="icon-facebook"></span></a>
+            <a href="https://twitter.com/home" target="_blank" class="social-icon__link"><span
+                class="icon-twitter"></span></a>
+            <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" class="social-icon__link"><span
+                class="icon-mail"></span></a>
+          </div>
+        </div>
+        <form action="php/send_mail.php" method="POST" class="formulario column column--50">
+          <label for="" class="formulario__label">Nombre:</label>
+          <input type="text" class="formulario__input-txt" name="nombre">
+          <label for="" class="formulario__label">Email:</label>
+          <input type="text" class="formulario__input-txt" name="email">
+          <label for="" class="formulario__label">Teléfono:</label>
+          <input type="text" class="formulario__input-txt" name="telefono">
+          <label for="" class="formulario__label">Mensaje:</label>
+          <textarea name="mensaje" rows="8" class="formulario__textarea"></textarea>
+          <button class="btn formulario__btn">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="main-footer">
+    <div class="container container--flex">
+      <div class="column column--33">
+        <h2 class="column__title">Visítanos</h2>
+        <p class="column__txt"><span class="icon-location">Vigo, 12</span></p>
+      </div>
+      <div class="column column--33">
+        <h2 class="column__title">Contáctanos</h2>
+        <p class="column__txt"><span class="icon-phone">999 000 000</span></p>
+        <p class="column__txt">
+          <span class="icon-mail">default@default.com</span>
+        </p>
+      </div>
+      <div class="column column--33">
+        <h2 class="column__title">Sígenos en nuestras redes</h2>
+        <p class="column__txt"><a href="https://www.facebook.com/" class="icon-facebook">Facebook</a></p>
+        <p class="column__txt"><a href="https://twitter.com/home" class="icon-twitter">Twitter</a></p>
+        <p class="column__txt"><a href="https://mail.google.com/mail/u/0/#inbox" class="icon-youtube">Youtube</a></p>
+      </div>
+    </div>
+    <p class="copy">©2022 | Restaurante Tex-Mex. Todos los derechos reservados.</p>
+  </footer>
+  <script src="scripts/menu.js"></script>
+</body>
+
+</html>
