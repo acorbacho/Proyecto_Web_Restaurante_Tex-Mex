@@ -30,7 +30,7 @@ try {
 
   //Recipients
   $mail->setFrom($email, $nombre);
-  $mail->addAddress('acorbachovieites@danielcastelao.org');     //Add a recipient
+  $mail->addAddress('pruebasphpmailer22@gmail.com');     //Add a recipient
   //$mail->addAddress('ellen@example.com');               //Name is optional
   //$mail->addReplyTo('info@example.com', 'Information');
   //$mail->addCC('cc@example.com');
@@ -50,7 +50,7 @@ try {
   $mail->send();
   echo '<script>;
         alert("El mensaje se ha enviado correctamente, gracias.")
-        window.location.href="../views/index.html"
+        window.location.href="../index.html"
         </script>';
 } catch (Exception $e) {
   echo 'Error al enviar el mensaje: {$mail->ErrorInfo}';
