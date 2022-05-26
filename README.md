@@ -17,7 +17,7 @@ páginas o áreas:
 
 ### **Navegación responsive** 📲
 
-La página está diseñada enfocandose en un estilo ***responsivo***, que se adapta a los múltiples tamaños de ventana.
+La página está diseñada enfocándose en un estilo ***responsivo***, que se adapta a los múltiples tamaños de ventana.
 
 ### **Contacto por mail** 📧
 
@@ -27,8 +27,4 @@ comunicará con el correo electrónico que se programe.
 
 ### **Área de pedidos** 🌮
 
-En el área de pedidos, los **usuarios** podrán iniciar sesión para realizar un pedido, o bien, registrarse si no
-tienen una cuenta. 
-
-Por otro lado, los **administradores** o **trabajadores**, tendrán su panel específico cuando
-inicien sesión con una cuenta de administrador. Los administradores podran aceptar los pedidos, además de  controlar el stock de ingredientes.
+En el área de pedidos, los **usuarios** podrán iniciar sesión para realizar un pedido, o bien, registrarse si no tienen una cuenta. Por otro lado, los **administradores** o **trabajadores**, tendrán su panel específico cuando inicien sesión, y podrán aceptar los pedidos, además de  controlar el stock de ingredientes.
