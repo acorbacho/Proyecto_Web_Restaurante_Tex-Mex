@@ -1,22 +1,22 @@
-.formulario {
+.form {
   padding: 10px;
   padding-top: 0;
   margin: auto;
 }
 
-.formulario__label,
-.formulario__input-txt,
-.formulario__textarea {
+.form__label,
+.form__input-txt,
+.form__textarea {
   display: block;
   width: 100%;
   margin: 5px;
 }
 
-.formulario__input-txt {
+.form__input-txt {
   padding: 5px;
 }
 
-.formulario__btn {
+.form__btn {
   cursor: pointer;
   font-size: 0.75em;
   border: none;
@@ -34,7 +34,7 @@
   margin-bottom: 172px;
 }
 
-.formulario__alert {
+.form__alert {
   position: relative;
   margin-left: 5px;
   bottom: 5px;
@@ -51,13 +51,13 @@ h1.logo,
 }
 
 @media screen and (min-width:960px) {
-  .formulario__btn {
+  .form__btn {
     width: 100%;
   }
 
-  .formulario__label,
-  .formulario__input-txt,
-  .formulario__textarea {
+  .form__label,
+  .form__input-txt,
+  .form__textarea {
     width: 100%;
   }
 }

@@ -36,26 +36,26 @@
   margin-right: 15px;
 }
 
-.formulario {
+.form {
   padding: 10px;
   padding-top: 0;
   width: fit-content;
 }
 
-.formulario__label,
-.formulario__input-txt,
-.formulario__textarea {
+.form__label,
+.form__input-txt,
+.form__textarea {
   display: block;
   margin: 5px;
   resize: none;
   width: 300px;
 }
 
-.formulario__input-txt {
+.form__input-txt {
   padding: 5px;
 }
 
-.formulario__btn {
+.form__btn {
   cursor: pointer;
   font-size: 0.75em;
   border: none;
@@ -68,13 +68,13 @@
     justify-content: center;
   }
 
-  .formulario__btn {
+  .form__btn {
     width: 400px;
   }
 
-  .formulario__label,
-  .formulario__input-txt,
-  .formulario__textarea {
+  .form__label,
+  .form__input-txt,
+  .form__textarea {
     width: 400px;
   }
 
