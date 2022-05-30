@@ -28,7 +28,7 @@
 
 .link {
   text-decoration: none;
-  color: orangered;
+  color: rgba(210, 55, 10, 0.9);
   font-size: 15px;
   font-weight: bold;
 }
