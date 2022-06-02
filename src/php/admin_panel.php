@@ -1,9 +1,25 @@
+<?php
+//Incluímos el archivo de conexión.
+include("connection.php");
+//Intentamos iniciar la sesión.
+session_start();
+//Desactivamos el reporte de errores para evitar que salgan en la página.
+error_reporting(0);
+//Guardamos la sesión y comprobamos si la sesión es de un admin.
+$session = $_SESSION["username"];
+if ($session != "admin") {
+  echo "Acceso denegado.";
+  die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
   <meta charset='UTF-8' />
   <title>Administración</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="../styles/style.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="../styles/fonts.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="../styles/admin_panel.css" media="screen" />
@@ -35,6 +51,7 @@
         <li class="menu__item"><a href="../gallery.html" class="menu__link">Galería</a></li>
         <li class="menu__item"><a href="../contact.html" class="menu__link">Contacto</a></li>
         <li class="menu__item"><a href="../login.html" class="menu__link menu__link--select">Área de pedidos</a></li>
+        <li class="menu__item"><a href="" class="menu__link">Cerrar sesión</a></li>
       </ul>
       <div class="social-icon">
         <a href="https://www.facebook.com/" target="_blank" class="social-icon__link"><span class="icon-facebook"></span></a>
@@ -50,43 +67,19 @@
   <main class="main">
     <div class="container container--flex">
       <section class="group orders">
-        <h2 class="group__title">Pedidos</h2>
+        <h2 class="group__title" id="orders_title">Pedidos</h2>
         <div class="row--banner">
           <p class="row__txt order__id--banner">ID</p>
           <p class="row__txt order__username--banner">Usuario</p>
           <p class="row__txt order__total--banner">Total</p>
         </div>
-        <div class="row">
-          <p class="row__txt order__id">B6632</p>
-          <p class="row__txt order__username">Iker</p>
-          <p class="row__txt order__total">23,90 €</p>
-          <button class="btn btn--orders">Aceptar pedido</button>
-        </div>
-        <div class="row">
-          <p class="row__txt order__id">P5633</p>
-          <p class="row__txt order__username">Manu</p>
-          <p class="row__txt order__total">12,00 €</p>
-          <button class="btn btn--orders">Aceptar pedido</button>
-        </div>
       </section>
       <section class="group ingredients">
-        <h2 class="group__title">Administración de ingredientes</h2>
+        <h2 class="group__title" id="ingredients_title">Administración de ingredientes</h2>
         <div class="row--banner">
           <p class="row__txt ingredients__name--banner">Ingrediente</p>
           <p class="row__txt ingredients__amount--banner">Stock</p>
           <p class="row__txt ingredients__amount__add--banner">Cantidad añadir</p>
-        </div>
-        <div class="row">
-          <p class="row__txt ingredients__name">Tortillas de trigo</p>
-          <p class="row__txt ingredients__amount">50</p>
-          <input type="text" name="amount" class="row__txt ingredients__amount__add"></p>
-          <button class="btn btn--ingredients">Añadir</button>
-        </div>
-        <div class="row">
-          <p class="row__txt ingredients__name">Tortillas de maíz</p>
-          <p class="row__txt ingredients__amount">50</p>
-          <input type="text" name="amount" class="row__txt ingredients__amount__add"></p>
-          <button class="btn btn--ingredients">Añadir</button>
         </div>
       </section>
       <div>
