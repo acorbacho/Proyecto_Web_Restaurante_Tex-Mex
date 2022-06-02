@@ -4,4 +4,4 @@ $server = "localhost";
 $user = "root";
 $pass = "";
 $db = "restaurant";
-$conection = mysqli_connect($server, $user, $pass, $db) or die("Error al conectar con la db." . mysqli_connect_error());
+$connection = mysqli_connect($server, $user, $pass, $db) or die("Error al conectar con la db." . mysqli_connect_error());

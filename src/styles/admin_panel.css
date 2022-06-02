@@ -1,5 +1,5 @@
 .orders {
-  border: solid 2px orangered;
+  border: solid 2px rgba(210, 55, 10, 0.9);
   border-radius: 10px;
   width: 450px;
   background-color: rgba(228, 99, 39, 0.5);
@@ -8,7 +8,7 @@
 }
 
 .ingredients {
-  border: solid 2px orangered;
+  border: solid 2px rgba(210, 55, 10, 0.9);
   border-radius: 10px;
   width: 450px;
   background-color: rgba(228, 99, 39, 0.5);
@@ -35,7 +35,7 @@
   font-size: 0.8em;
   margin: 2px;
   margin-left: 0px;
-  border: solid 2px orangered;
+  border: solid 2px rgba(210, 55, 10, 0.9);
   width: 100%;
   border-radius: 10px;
   align-items: center;
@@ -44,7 +44,7 @@
 .row--banner {
   display: flex;
   flex-direction: row;
-  border-top: solid 2px orangered;
+  border-top: solid 2px rgba(210, 55, 10, 0.9);
   margin-left: 0px;
   color: black;
   font-weight: bold;
@@ -97,12 +97,16 @@ main .container--flex {
 .ingredients__amount__add {
   width: 60px;
   margin-right: 15px;
-  border: 2px solid orangered;
+  border: 2px solid rgba(210, 55, 10, 0.9);
 }
 
 .ingredients__amount__add--banner {
   position: relative;
   right: 5%
+}
+
+.show {
+  height: 234px;
 }
 
 

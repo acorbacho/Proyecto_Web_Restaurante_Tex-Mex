@@ -1,23 +1,23 @@
-.formulario {
+.form {
   padding: 10px;
   padding-top: 0;
   margin: auto;
 }
 
-.formulario__label,
-.formulario__input-txt,
-.formulario__textarea,
+.form__label,
+.form__input-txt,
+.form__textarea,
 .link {
   display: block;
   width: 100%;
   margin: 5px;
 }
 
-.formulario__input-txt {
+.form__input-txt {
   padding: 5px;
 }
 
-.formulario__btn {
+.form__btn {
   cursor: pointer;
   font-size: 0.75em;
   border: none;
@@ -28,7 +28,7 @@
 
 .link {
   text-decoration: none;
-  color: orangered;
+  color: rgba(210, 55, 10, 0.9);
   font-size: 15px;
   font-weight: bold;
 }
@@ -42,6 +42,16 @@
   margin-bottom: 172px;
 }
 
+.form__alert {
+  position: relative;
+  margin-left: 5px;
+  bottom: 5px;
+  height: 5px;
+  font-size: 11px;
+  color: red;
+  font-weight: bold;
+}
+
 h1.logo,
 .icon-phone,
 .icon-location {
@@ -49,13 +59,13 @@ h1.logo,
 }
 
 @media screen and (min-width:960px) {
-  .formulario__btn {
+  .form__btn {
     width: 100%;
   }
 
-  .formulario__label,
-  .formulario__input-txt,
-  .formulario__textarea {
+  .form__label,
+  .form__input-txt,
+  .form__textarea {
     width: 100%;
   }
 }

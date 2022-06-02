@@ -67,7 +67,7 @@ h6 {
 .logo {
   position: relative;
   font-size: 3em;
-  color: orangered;
+  color: rgba(210, 55, 10, 0.9);
   padding: 10px;
   font-family: 'Pacifico', cursive;
   font-weight: 1;
@@ -75,7 +75,7 @@ h6 {
 }
 
 .main-header__contactInfo__phone {
-  background: orangered;
+  background: rgba(210, 55, 10, 0.9);
   color: white;
   margin: 0;
   padding: 10px;
@@ -113,6 +113,7 @@ h6 {
 }
 
 .social-icon {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   position: relative;
@@ -158,14 +159,14 @@ h6 {
 }
 
 .menu__link:hover {
-  background: orangered;
+  background: rgb(255, 69, 0);
 }
 
 .menu__link--select {
-  background: orangered;
+  background: rgb(255, 69, 0);
 }
 
-.mostrar {
+.show {
   height: 195px;
 }
 
@@ -209,7 +210,7 @@ h6 {
 /*---Estilos principales---*/
 
 .group--color .container {
-  background: orangered;
+  background: rgba(210, 55, 10, 0.9);
   color: white;
   padding: 10px;
   text-align: center;
@@ -236,7 +237,7 @@ h6 {
   text-align: center;
   text-decoration: none;
   width: 120px;
-  background: orangered;
+  background: rgba(210, 55, 10, 0.9);
   color: white;
   padding: 8px;
   margin: 10px auto;
@@ -244,6 +245,7 @@ h6 {
 
 .group__title {
   margin: 30px 0;
+  margin-left: 10px;
   font-size: 2em;
   font-family: 'Pacifico', cursive;
   font-weight: 100;
@@ -269,7 +271,7 @@ h6 {
 
 .today-special__price {
   font-style: 1.5em;
-  color: orangered;
+  color: rgba(210, 55, 10, 0.9);
   font-weight: bold;
 }
 
@@ -329,7 +331,7 @@ h6 {
   .main-header__contactInfo__address {
     color: white;
     margin: 0;
-    padding-bottom: 35px;
+    padding-bottom: 30px;
     margin-right: 10px;
   }
 
@@ -360,7 +362,7 @@ h6 {
   }
 
   .today-special .column {
-    border: 2px solid orangered;
+    border: 2px solid rgba(210, 55, 10, 0.9);
     padding: 5px;
   }
 
@@ -488,6 +490,12 @@ h6 {
     padding-top: 50px;
     padding-bottom: 50px;
   }
+
+  .social-icon {
+    bottom: 47px;
+    left: 760px;
+    width: 20%;
+  }
 }
 
 @media screen and (min-width:1600px) {
@@ -506,5 +514,9 @@ h6 {
 
   .today-special__img {
     height: 300px;
+  }
+
+  .social-icon {
+    left: 1120px;
   }
 }
