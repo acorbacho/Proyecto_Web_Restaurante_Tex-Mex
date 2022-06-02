@@ -9,7 +9,7 @@ $admin = false;
 //Verificamos que todos los campos son cubiertos.
 if ($user != NULL and $password != NULL and $email != NULL) {
   //Comprobamos que el usuario no está registrado
-  $username_select_query = "SELECT * FROM users WHERE username = '$username'";
+  $username_select_query = "SELECT username FROM users WHERE username = '$username'";
   $username_verify = mysqli_query($connection, $username_select_query);
   if (mysqli_num_rows($username_verify) > 0) {
     echo "Usuario ya registrado";
