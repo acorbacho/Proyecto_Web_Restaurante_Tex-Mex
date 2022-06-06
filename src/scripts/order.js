@@ -29,7 +29,7 @@ class Order {
    * Función de clase para obtener el nombre de usuario.
    * @returns {*}
    */
-  getUsename() {
+  getUsername() {
     return this.username
   }
 
