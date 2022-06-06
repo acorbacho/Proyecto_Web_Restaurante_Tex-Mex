@@ -67,7 +67,7 @@ if ($session != "admin") {
   <main class="main">
     <div class="container container--flex">
       <section class="group orders">
-        <h2 class="group__title" id="orders_title">Pedidos</h2>
+        <h2 class="group__title">Pedidos</h2>
         <div class="row--banner">
           <p class="row__txt order__id--banner">ID</p>
           <p class="row__txt order__username--banner">Usuario</p>
@@ -75,7 +75,7 @@ if ($session != "admin") {
         </div>
       </section>
       <section class="group ingredients">
-        <h2 class="group__title" id="ingredients_title">Administración de ingredientes</h2>
+        <h2 class="group__title">Administración de ingredientes</h2>
         <div class="row--banner">
           <p class="row__txt ingredients__name--banner">Ingrediente</p>
           <p class="row__txt ingredients__amount--banner">Stock</p>
@@ -107,6 +107,10 @@ if ($session != "admin") {
     <p class="copy">©2022 | Restaurante Tex-Mex. Todos los derechos reservados.</p>
   </footer>
   <script src="../scripts/menu.js"></script>
+  <script src="../scripts/order.js"></script>
+  <script src="../scripts/model.js"></script>
+  <script src="../scripts/view.js"></script>
+  <script src="../scripts/controller.js"></script>
 </body>
 
 </html>

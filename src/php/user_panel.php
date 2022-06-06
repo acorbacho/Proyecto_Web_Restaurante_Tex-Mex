@@ -64,7 +64,7 @@ if ($session == null or $session = "") {
   <main class="main">
     <div class="container container--flex">
       <section class="group dishes">
-        <h2 class="group__title" id="dishes_title">Platos a domicilio</h2>
+        <h2 class="group__title">Platos a domicilio</h2>
       </section>
       <section class="cart">
         <div class="cart__title">Tu carrito</div>
@@ -100,6 +100,7 @@ if ($session == null or $session = "") {
     <p class="copy">©2022 | Restaurante Tex-Mex. Todos los derechos reservados.</p>
   </footer>
   <script src="../scripts/menu.js"></script>
+  <script src="../scripts/order.js"></script>
   <script src="../scripts/model.js"></script>
   <script src="../scripts/view.js"></script>
   <script src="../scripts/controller.js"></script>
