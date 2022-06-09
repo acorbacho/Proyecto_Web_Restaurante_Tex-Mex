@@ -45,7 +45,7 @@ class View {
     dishes.forEach(this.updateDishes)
     //Asignación de atributos a los elmentos creados.
     let aux_user_dishes_img = document.getElementsByClassName('dishes__img')
-    //Aplicamos las imágenes a los platos de la vista.
+    //Le asignamos una imágen a cada plato en el HTML.
     aux_user_dishes_img[0].setAttribute('src', '../assets/img/user_panel/fajita.png')
     aux_user_dishes_img[1].setAttribute('src', '../assets/img/user_panel/nachos.png')
     aux_user_dishes_img[2].setAttribute('src', '../assets/img/user_panel/taco.png')
