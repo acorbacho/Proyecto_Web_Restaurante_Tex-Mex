@@ -19,6 +19,7 @@ if ($session != "admin") {
 <head>
   <meta charset='UTF-8' />
   <title>Administración</title>
+  <link rel="icon" href="../assets/img/favicon.png">
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="../styles/style.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="../styles/fonts.css" media="screen" />
@@ -51,7 +52,7 @@ if ($session != "admin") {
         <li class="menu__item"><a href="../gallery.html" class="menu__link">Galería</a></li>
         <li class="menu__item"><a href="../contact.html" class="menu__link">Contacto</a></li>
         <li class="menu__item"><a href="../login.html" class="menu__link menu__link--select">Área de pedidos</a></li>
-        <li class="menu__item"><a href="" class="menu__link">Cerrar sesión</a></li>
+        <li class="menu__item"><a href="logout.php" class="menu__link">Cerrar sesión</a></li>
       </ul>
       <div class="social-icon">
         <a href="https://www.facebook.com/" target="_blank" class="social-icon__link"><span class="icon-facebook"></span></a>
@@ -61,7 +62,7 @@ if ($session != "admin") {
     </div>
   </nav>
   <section class="banner">
-    <img src="" alt="" class="banner__img">
+    <img src="../assets/img/admin_panel/banner-admin_panel.jpg" alt="" class="banner__img">
     <div class="banner__content">Administración de pedidos</div>
   </section>
   <main class="main">
@@ -69,9 +70,9 @@ if ($session != "admin") {
       <section class="group orders">
         <h2 class="group__title">Pedidos</h2>
         <div class="row--banner">
-          <p class="row__txt order__id--banner">ID</p>
-          <p class="row__txt order__username--banner">Usuario</p>
-          <p class="row__txt order__total--banner">Total</p>
+          <p class="row__txt orders__id--banner">ID</p>
+          <p class="row__txt orders__username--banner">Usuario</p>
+          <p class="row__txt orders__total--banner">Total</p>
         </div>
       </section>
       <section class="group ingredients">

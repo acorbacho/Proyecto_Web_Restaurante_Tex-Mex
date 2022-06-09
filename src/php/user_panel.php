@@ -16,6 +16,7 @@ if ($session == null or $session = "") {
 <head>
   <meta charset='UTF-8' />
   <title>Pedidos</title>
+  <link rel="icon" href="../assets/img/favicon.png">
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="../styles/style.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="../styles/fonts.css" media="screen" />
@@ -48,7 +49,7 @@ if ($session == null or $session = "") {
         <li class="menu__item"><a href="../gallery.html" class="menu__link">Galería</a></li>
         <li class="menu__item"><a href="../contact.html" class="menu__link">Contacto</a></li>
         <li class="menu__item"><a href="../login.html" class="menu__link menu__link--select">Área de pedidos</a></li>
-        <li class="menu__item"><a href="" class="menu__link">Cerrar sesión</a></li>
+        <li class="menu__item"><a href="logout.php" class="menu__link">Cerrar sesión</a></li>
       </ul>
       <div class="social-icon">
         <a href="https://www.facebook.com/" target="_blank" class="social-icon__link"><span class="icon-facebook"></span></a>
@@ -58,7 +59,7 @@ if ($session == null or $session = "") {
     </div>
   </nav>
   <section class="banner">
-    <img src="" alt="" class="banner__img">
+    <img src="../assets/img/user_panel/banner-user_panel.jpg" alt="" class="banner__img">
     <div class="banner__content">Haz tu pedido</div>
   </section>
   <main class="main">
@@ -72,6 +73,7 @@ if ($session == null or $session = "") {
         </div>
         <div class="cart__total">
           <p class="total">Total:</p>
+          <p class="euros">0.00 €</p>
         </div>
         <button class="btn btn--cart">Finalizar pedido</button>
       </section>
