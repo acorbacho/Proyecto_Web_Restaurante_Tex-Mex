@@ -10,7 +10,7 @@ function checkUsername(username, alertclass) {
     //Expresión regular para el nombre de usuario.  
     const pattern = new RegExp('^[A-Z,á,é,í,ó,ú,0-9]+$', 'i')
     //Evaluamos la longitud y la expresión regular del username.
-    if (username.value.length > 25 || username.value == '') {
+    if (username.value.length > 25 || username.value == '' || username.value.length < 3) {
       username.style.backgroundColor = 'lightcoral'
       alertclass.innerHTML = 'Introduce un nombre de usuario válido.'
       return false

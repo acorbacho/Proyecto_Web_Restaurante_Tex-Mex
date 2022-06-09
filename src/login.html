@@ -4,6 +4,7 @@
 <head>
   <meta charset='UTF-8' />
   <title>Login</title>
+  <link rel="icon" href="assets/img/favicon.png">
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="styles/style.css" media="screen" />
@@ -56,24 +57,16 @@
     <section class="group login">
       <h2 class="group__title">Inicia sesión para hacer pedidos</h2>
       <div class="container container--flex">
-        <<<<<<< HEAD <form action="php/login.php" method="POST" class="formulario column column--50">
-          <label for="" class="formulario__label">Email:</label>
-          <input type="text" class="formulario__input-txt" name="email">
-          <label for="" class="formulario__label">Contraseña:</label>
-          <input type="text" class="formulario__input-txt" name="password">
-          <button class="btn formulario__btn">Iniciar sesión</button>
-          =======
-          <form action="php/login.php" method="GET" id="form" class="form column column--50">
-            <label for="" class="form__label">Usuario:</label>
-            <input type="text" id="login_username" class="form__input-txt" name="username">
-            <div class="form__alert"></div>
-            <label for="" class="form__label">Contraseña:</label>
-            <input type="text" id="login_password" class="form__input-txt" name="password">
-            <div class="form__alert"></div>
-            <button class="btn form__btn">Iniciar sesión</button>
-            >>>>>>> feature
-            <a href="signup.html" class="link">O bien regístrate...</a>
-          </form>
+        <form action="php/login.php" method="GET" id="form" class="form column column--50">
+          <label for="" class="form__label">Usuario:</label>
+          <input type="text" id="login_username" class="form__input-txt" name="username">
+          <div class="form__alert"></div>
+          <label for="" class="form__label">Contraseña:</label>
+          <input type="password" id="login_password" class="form__input-txt" name="password">
+          <div class="form__alert"></div>
+          <button class="btn form__btn">Iniciar sesión</button>
+          <a href="signup.html" class="link">O bien regístrate...</a>
+        </form>
       </div>
     </section>
   </main>
@@ -99,11 +92,9 @@
     </div>
     <p class="copy">©2022 | Restaurante Tex-Mex. Todos los derechos reservados.</p>
   </footer>
-  <<<<<<< HEAD=======<script src="scripts/form_validation_functions.js">
-    </script>
-    <script src="scripts/login_form_send.js"></script>
-    >>>>>>> feature
-    <script src="scripts/menu.js"></script>
+  <script src="scripts/form_validation_functions.js"></script>
+  <script src="scripts/login_form_send.js"></script>
+  <script src="scripts/menu.js"></script>
 </body>
 
 </html>

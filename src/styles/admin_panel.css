@@ -1,16 +1,17 @@
 .orders {
   border: solid 2px rgba(210, 55, 10, 0.9);
   border-radius: 10px;
-  width: 450px;
+  width: 350px;
   background-color: rgba(228, 99, 39, 0.5);
   margin: 10px;
   padding: 10px;
+  align-self: flex-start;
 }
 
 .ingredients {
   border: solid 2px rgba(210, 55, 10, 0.9);
   border-radius: 10px;
-  width: 450px;
+  width: 350px;
   background-color: rgba(228, 99, 39, 0.5);
   margin: 10px;
   padding: 10px;
