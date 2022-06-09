@@ -150,6 +150,7 @@ class Model {
      * @type {number}
      */
     let order_total = 0
+
     //Obtenemos el total del pedido.
     for (let i = 0; i < this.cart.length; i++) {
       order_dishes_name[i] = this.cart[i].dish_name
@@ -221,6 +222,7 @@ class Model {
         parsed_response = JSON.parse(response)
       }
     })
+
     //Iteramos la respuesta, y de esta manera creamos objetos "Order" con los pedidos
     //en JSON que están en el array "parsed_response".
     for (let i = 0; i < parsed_response.length; i++) {

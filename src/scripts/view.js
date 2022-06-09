@@ -117,6 +117,7 @@ class View {
      * @type {Array}
      */
     const aux_button_classes = document.getElementsByClassName('btn--dishes')
+    //Se crean los eventos.
     for (let i = 0; i < aux_button_classes.length; i++) {
       aux_button_classes[i].addEventListener('click', (evt) => {
         //Evalúa si el carrito está lleno.
@@ -154,7 +155,7 @@ class View {
           //Se incrustan los elementos en el "document".
           this.user_cart_container.append(this.user_cart_name, this.user_cart_price, this.user_cart_remove)
         } else {
-          alert('El número máximo de items en el carrito son 10')
+          alert('El número máximo de items en el carrito son 10.')
         }
       })
     }
@@ -217,7 +218,8 @@ class View {
 
   /**
    * Función que activa un evento que crea una orden cuando se finaliza el pedido
-   * pulsando el botón de finalizar pedido en el carrito, luego te redirecciona.
+   * pulsando el botón de finalizar pedido en el carrito. Sale un mensaje de confirmación
+   * y se redirecciona al "index.html".
    * @param {*} handler Función que guarda el pedido en la base de datos.
    * @param {*} cart Carrito.
    */
@@ -304,6 +306,7 @@ class View {
      * @type {*}
      */
     let aux_id = document.getElementsByClassName('orders__id')
+
     //Se crean los eventos. Sale una notificación y luego se recarga la página, cuando se acepta un pedido.
     for (let i = 0; i < aux_buttons.length; i++) {
       aux_buttons[i].addEventListener('click', function (evt) {
@@ -395,6 +398,7 @@ class View {
      * @type {*}
      */
     let aux_name = document.getElementsByClassName('ingredients__name')
+
     //Se crean los eventos y se lanza una alerta de confirmación, y luego se recarga la página.
     for (let i = 0; i < aux_buttons.length; i++) {
       aux_buttons[i].addEventListener('click', function (evt) {
@@ -421,6 +425,7 @@ class View {
      * @type {*}
      */
     let interval = setInterval(reloading, 30000)
+
     //Los siguientes eventos se lanzan cuando hay actividad en la zona "main" de la página.
     document.querySelector('.main').addEventListener('click', () => {
       //Primero se destruye el intervalo anterior.
