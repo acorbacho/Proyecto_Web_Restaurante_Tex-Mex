@@ -72,28 +72,6 @@ class Model {
   }
 
   /**
-   * Función que trae el listado de platos disponible de la base de datos.
-   * @returns {Array}
-   */
-  loadDishes() {
-    /**
-     * Array que almacena la respuesta AJAX parseada a JSON.
-     * @type {Array}
-     */
-    let parsed_response = []
-    //Llamada a PHP trayendo los dishes.
-    $.ajax({
-      url: 'get_dishes.php',
-      type: 'GET',
-      async: false,
-      success: function (response) {
-        parsed_response = JSON.parse(response)
-      }
-    })
-    return parsed_response
-  }
-
-  /**
    * Función que mete un plato de la lista de platos en el carrito,
    * pasándole el índice por parámetro, y lo devuelve.
    * @param {number} _index Índice del plato. 
@@ -200,6 +178,29 @@ class Model {
     })
     return aux_response
   }
+
+  /**
+   * Función que trae el listado de platos disponible de la base de datos.
+   * @returns {Array}
+   */
+  loadDishes() {
+    /**
+     * Array que almacena la respuesta AJAX parseada a JSON.
+     * @type {Array}
+     */
+    let parsed_response = []
+    //Llamada a PHP trayendo los dishes.
+    $.ajax({
+      url: 'get_dishes.php',
+      type: 'GET',
+      async: false,
+      success: function (response) {
+        parsed_response = JSON.parse(response)
+      }
+    })
+    return parsed_response
+  }
+
   /**
    * Función que carga los pedidos de la base de datos y los almacena en
    * el array de pedidos del constructor, retornando este último.
@@ -256,6 +257,46 @@ class Model {
   }
 
   /**
+   * Función dedicada a reponer stock de un ingrediente en la db.
+   * @param {*} _name Nombre del ingrediente.
+   * @param {*} _amount Cantidad a añadir.
+   * @returns {*} Respuesta desde PHP de si se ha hecho la inserción correctamente.
+   */
+  updateIngredients(_name, _amount) {
+    /**
+     * Constante que almacena el nombre del ingrediente,
+     * traída por parámetro desde la vista.
+     * @type {*}
+     */
+    const ingredient_name = _name
+    /**
+     * Constante que almacena la cantidad de ingrediente a añadir,
+     * traída por parámetro desde la vista.
+     * @type {number}
+     */
+    const ingredient_amount = _amount
+    /**
+     * Variable axuiliar que almacena la respuesta AJAX.
+     * @type {*}
+     */
+    let aux_response
+    //Se ejecuta la llamada AJAX.
+    $.ajax({
+      data: {
+        'ingredient_name': ingredient_name,
+        'ingredient_amount': ingredient_amount
+      },
+      url: 'update_ingredient.php',
+      type: 'POST',
+      async: false,
+      success: function (response) {
+        aux_response = response
+      }
+    })
+    return aux_response
+  }
+
+  /**
    * Función que quita un plato del carrito y lo devuelve.
    * @param {*} _name Nombre del plato. 
    * @returns {Object} Elmento del carrito eliminado.
@@ -299,44 +340,5 @@ class Model {
     //Se elimina el pedido del array de pedido.
     this.orders.splice(_index, 1)
     return ajax_response
-  }
-  /**
-   * Función dedicada a reponer stock de un ingrediente en la db.
-   * @param {*} _name Nombre del ingrediente.
-   * @param {*} _amount Cantidad a añadir.
-   * @returns {*} Respuesta desde PHP de si se ha hecho la inserción correctamente.
-   */
-  updateIngredients(_name, _amount) {
-    /**
-     * Constante que almacena el nombre del ingrediente,
-     * traída por parámetro desde la vista.
-     * @type {*}
-     */
-    const ingredient_name = _name
-    /**
-     * Constante que almacena la cantidad de ingrediente a añadir,
-     * traída por parámetro desde la vista.
-     * @type {number}
-     */
-    const ingredient_amount = _amount
-    /**
-     * Variable axuiliar que almacena la respuesta AJAX.
-     * @type {*}
-     */
-    let aux_response
-    //Se ejecuta la llamada AJAX.
-    $.ajax({
-      data: {
-        'ingredient_name': ingredient_name,
-        'ingredient_amount': ingredient_amount
-      },
-      url: 'update_ingredient.php',
-      type: 'POST',
-      async: false,
-      success: function (response) {
-        aux_response = response
-      }
-    })
-    return aux_response
   }
 }
