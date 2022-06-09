@@ -6,128 +6,337 @@ class Model {
    * Constructior de clase.
    */
   constructor() {
-    //Array que almacena los objetos "dishes".
+    //Array que almacena los objetos "dishes" traídos de la base de datos.
     this.dishes = []
     //Carrito que almacena los "dishes" que el usuario decide comprar.
     this.cart = []
-    //Se almacenan las "orders" que están pendientes en el restaurante.
+    //Se almacenan las "orders" que están pendientes en el restaurante (solo panel admin).
     this.orders = []
+    //Se almacenan los ingredientes procedentes de la base de datos.
+    this.ingredients = []
   }
 
   /**
-   * Función para obtener los platos del array de platos.
-   * @param {*} _name Nombre del plato. 
-   * @returns {Object}
+   * Función dedicada a consultar el nombre de usuario que ha iniciado sesión.
+   * @returns {*} 
    */
-  getDish(_name) {
-    return this.dishes.find(_dish => _dish.name === _name)
+  whoAmI() {
+    /**
+     * Variable que almacena el nombre de usuario.
+     * @type {*}
+     */
+    let username
+    //Consulta del nombre de usuario a PHP. 
+    $.ajax({
+      url: 'get_session.php',
+      type: 'GET',
+      async: false,
+      success: function (response) {
+        username = response
+      }
+    })
+    return username
+  }
+
+  /**
+   * Función para obtener los platos del array de platos disponibles.
+   * @returns {Array} Platos.
+   */
+  getDishes() {
+    return this.dishes
   }
 
   /**
    * Función para obtener los platos del carrito.
-   * @param {*} _name Nombre del plato. 
-   * @returns {Object}
+   * @returns {Array} Items.
    */
-  getItem(_name) {
-    return this.cart.find(_item => _item.name === _name)
+  getItems() {
+    return this.cart
+  }
+
+  /**
+   * Función que devuelve las ordenes existentes.
+   * @returns {Array} Pedidos.
+   */
+  getOrders() {
+    return this.orders
   }
 
   /**
    * Función que devuelve una orden.
    * @param {*} _id ID de la orden.
-   * @returns {Object}
+   * @returns {Object} Pedido.
    */
   getOrder(_id) {
     return this.orders.find(_order => _order.id === _id)
   }
 
-  setDishes() {
+  /**
+   * Función que trae el listado de platos disponible de la base de datos.
+   * @returns {Array}
+   */
+  loadDishes() {
+    /**
+     * Array que almacena la respuesta AJAX parseada a JSON.
+     * @type {Array}
+     */
+    let parsed_response = []
     //Llamada a PHP trayendo los dishes.
-    let resp = []
     $.ajax({
-      url: 'dishes.php',
+      url: 'get_dishes.php',
       type: 'GET',
       async: false,
       success: function (response) {
-        resp = JSON.parse(response)
+        parsed_response = JSON.parse(response)
       }
     })
-    this.dishes = resp
+    return parsed_response
   }
 
   /**
-   * Función que mete un plato en el carrito y lo devuelve.
-   * @param {*} _name Nombre del plato. 
+   * Función que mete un plato de la lista de platos en el carrito,
+   * pasándole el índice por parámetro, y lo devuelve.
+   * @param {number} _index Índice del plato. 
    * @returns {Object}
    */
-  setItem(_name) {
+  setItem(_index) {
     /**
      * Constante que almacena un nuevo objeto buscado entre los platos.
      * @type {Object}
      */
-    const new_item = this.dishes.find(_item => _item.name === _name)
+    const new_item = this.dishes[_index]
     //Se mete el objeto en el carrito.
     this.cart.push(new_item)
     return new_item
   }
 
   /**
-   * Función que mete una orden en el listado de pedidos y la devuelve.
+   * Función que.
    * @param {*} _id ID de la orden.
    * @param {*} _username Nombre de usuario de la orden.
-   * @returns {Object}
+   * @returns {*} Mensaje de confirmación/error.
    */
-  setOrder(_id, _username) {
+  storageOrder() {
     /**
-     * Constante que almacena un nuevo plato creado a partir de un ID, un usuario y el carrito.
+     * Variable que almacena el nombre de usuario que inicia sesión.
+     * @type {*}
+     */
+    let username
+    //Se consulta el usuario que ha iniciado sesión a PHP.
+    $.ajax({
+      url: 'get_session.php',
+      type: 'GET',
+      async: false,
+      success: function (response) {
+        username = response
+      }
+    })
+    /**
+     * Constante que guarda la fecha actual.
      * @type {Object}
      */
-    const new_order = new Order(_id, _username, this.cart)
-    //Se mete la orden en el listado de pedidos.
-    this.orders.push(new_order)
-    return new_order
+    const date = new Date()
+    /**
+     * Constante que guarda las horas de la fecha actual.
+     * @type {number}
+     */
+    const hours = date.getHours()
+    /**
+     * Constante que guarda los minutos de la fecha actual.
+     * @type {number}
+     */
+    const minutes = date.getMinutes()
+    /**
+     * Constante que guarda los segundos de la fecha actual.
+     * @type {number}
+     */
+    const seconds = date.getSeconds()
+    /**
+     * Constante que guarda los milisegundos de la fecha actual.
+     * @type {number}
+     */
+    const milliseconds = date.getMilliseconds()
+    /**
+     * Se genera un ID para el pedido concatenando la hora con minutos, segundos y milisegundos 
+     * en la que fue hecho el pedido con los 3 primeros dígitos del usuario.
+     * @type {*}
+     */
+    const order_id = hours + '' + minutes + seconds + milliseconds + username.slice(0, 3).toUpperCase()
+    /**
+     * Variable que almacena el nombre de los platos del carrito del pedido.
+     * @type {Array}
+     */
+    let order_dishes_name = []
+    /**
+     * Variable que almacena el total del pedido.
+     * @type {number}
+     */
+    let order_total = 0
+    //Obtenemos el total del pedido.
+    for (let i = 0; i < this.cart.length; i++) {
+      order_dishes_name[i] = this.cart[i].dish_name
+      order_total = order_total + parseFloat(this.cart[i].price)
+    }
+    /**
+     * Almacena la respuesta que devuelve PHP cuando se sube el pedido a la db,
+     * proveniente de la petición por AJAX.
+     * @type {*}
+     */
+    let aux_response
+    //Subimos el pedido a la db.
+    $.ajax({
+      data: {
+        'order_id': order_id,
+        'username': username,
+        'dishes_name': order_dishes_name,
+        'total': order_total
+      },
+      url: 'send_order.php',
+      type: 'POST',
+      async: false,
+      success: function (response) {
+        aux_response = response
+      }
+    })
+    return aux_response
+  }
+  /**
+   * Función que carga los pedidos de la base de datos y los almacena en
+   * el array de pedidos del constructor, retornando este último.
+   * @returns {*}
+   */
+  loadOrders() {
+    /**
+     * Array que almacena la respuesta AJAX parseada a JSON.
+     * @type {Array}
+     */
+    let parsed_response = []
+    //Llamada a PHP trayendo los pedidos almacenados.
+    $.ajax({
+      url: 'get_orders.php',
+      type: 'GET',
+      async: false,
+      success: function (response) {
+        parsed_response = JSON.parse(response)
+      }
+    })
+    //Iteramos la respuesta, y de esta manera creamos objetos "Order" con los pedidos
+    //en JSON que están en el array "parsed_response".
+    for (let i = 0; i < parsed_response.length; i++) {
+      /**
+       * Constante que almacena el último objeto creado.
+       * @type {Object}
+       */
+      const order = new Order(parsed_response[i].order_id, parsed_response[i].username, parsed_response[i].total)
+      this.orders.push(order)
+    }
+    return this.orders
+  }
+
+  /**
+   * Función que retorna todos los ingredientes de la base de datos.
+   * @returns {Array} Ingredientes de la db.
+   */
+  loadIngredients() {
+    /**
+     * Array que almacena la respuesta AJAX parseada a JSON.
+     * @type {Array}
+     */
+    let parsed_response = []
+    //Llamada a PHP trayendo los ingredients.
+    $.ajax({
+      url: 'get_ingredients.php',
+      type: 'GET',
+      async: false,
+      success: function (response) {
+        parsed_response = JSON.parse(response)
+      }
+    })
+    return parsed_response
   }
 
   /**
    * Función que quita un plato del carrito y lo devuelve.
    * @param {*} _name Nombre del plato. 
-   * @returns {Object}
+   * @returns {Object} Elmento del carrito eliminado.
    */
-  removeItem(_name) {
+  removeItem(_index) {
     /**
      * Constante que almacena el item que se elimina del carrito,
      * despues de buscarse en el carrito.
      * @type {Object}
      */
-    const old_item = this.cart.find(_item => _item.name === _name)
-    /**
-     * Constante que almacena el indice del objeto del carrito que se quiere eliminar.
-     * @type {Object}
-     */
-    const old_item_index = array.indexOf(old_item)
+    const old_item = this.cart[_index]
     //Se elimina el plato del carrito.
-    this.cart.splice(old_item_index, 1)
+    this.cart.splice(_index, 1)
     return old_item
   }
 
   /**
    * Función que quita una orden del listado de pedidos y la devuelve.
    * @param {*} _id ID de la orden.
-   * @returns {Object}
+   * @param {*} _index Indice de la orden en el array de pedidos.
+   * @returns {*} Respuesta de PHP si la petición se ha completado correctamente.
    */
-  removeOrder(_id) {
+  removeOrder(_id, _index) {
     /**
-     * Constante que almacena la orden a eliminar.
-     * @type {Object}
+     * Variable que almacena el ID del pedido, traida por parámetro desde la vista.
+     * @type {*}
      */
-    const old_order = this.orders.find(_order => _order.id === _id)
-    /**
-     * Constante que almacena el índice de la orden a elminar.
-     * @type {Object}
-     */
-    const old_order_index = array.indexOf(order)
+    const order_id = _id
+    let ajax_response
+    $.ajax({
+      data: {
+        'order_id': order_id,
+      },
+      url: 'delete_order.php',
+      type: 'POST',
+      async: false,
+      success: function (response) {
+        ajax_response = response
+      }
+    })
     //Se elimina el pedido del array de pedido.
-    this.orders.splice(old_order_index, 1)
-    return old_order
+    this.orders.splice(_index, 1)
+    return ajax_response
+  }
+  /**
+   * Función dedicada a reponer stock de un ingrediente en la db.
+   * @param {*} _name Nombre del ingrediente.
+   * @param {*} _amount Cantidad a añadir.
+   * @returns {*} Respuesta desde PHP de si se ha hecho la inserción correctamente.
+   */
+  updateIngredients(_name, _amount) {
+    /**
+     * Constante que almacena el nombre del ingrediente,
+     * traída por parámetro desde la vista.
+     * @type {*}
+     */
+    const ingredient_name = _name
+    /**
+     * Constante que almacena la cantidad de ingrediente a añadir,
+     * traída por parámetro desde la vista.
+     * @type {number}
+     */
+    const ingredient_amount = _amount
+    /**
+     * Variable axuiliar que almacena la respuesta AJAX.
+     * @type {*}
+     */
+    let aux_response
+    //Se ejecuta la llamada AJAX.
+    $.ajax({
+      data: {
+        'ingredient_name': ingredient_name,
+        'ingredient_amount': ingredient_amount
+      },
+      url: 'update_ingredient.php',
+      type: 'POST',
+      async: false,
+      success: function (response) {
+        aux_response = response
+      }
+    })
+    return aux_response
   }
 }
