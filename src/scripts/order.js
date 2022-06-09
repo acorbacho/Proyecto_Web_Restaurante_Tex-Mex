@@ -6,15 +6,15 @@ class Order {
    * Constructor de la clase.
    * @param {*} id ID del pedido.
    * @param {*} username Nombre de usuario que realiza el pedido.
-   * @param {Array} cart Array con los platos del pedido.
+   * @param {number} total Precio total del pedido.
    */
-  constructor(id, username, cart) {
+  constructor(id, username, total) {
     //Atributo "id".
     this.id = id
     //Atributo "username".
     this.username = username
-    //Atributo "cart".
-    this.dishes = cart
+    //Atributo del precio total.
+    this.total = total
   }
 
   /**
@@ -34,11 +34,11 @@ class Order {
   }
 
   /**
-   * Función de clase para obtener el array de platos.
-   * @returns {Array}
+   * Función de clase para obtener el total.
+   * @returns {*}
    */
-  getDishes() {
-    return this.dishes
+  getTotal() {
+    return this.total
   }
 
   /**
@@ -53,15 +53,7 @@ class Order {
    * Función que setea el nombre de usuario.
    * @param {*} _username 
    */
-  setUsename(_username) {
+  setUsername(_username) {
     this.username = _username
-  }
-
-  /**
-   * Función que introduce la lista de platos en la orden.
-   * @param {Array} _cart 
-   */
-  setCart(_cart) {
-    this.cart = _cart
   }
 }
