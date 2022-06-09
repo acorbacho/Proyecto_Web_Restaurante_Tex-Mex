@@ -53,5 +53,5 @@ try {
         window.location.href="../index.html"
         </script>';
 } catch (Exception $e) {
-  echo 'Error al enviar el mensaje: {$mail->ErrorInfo}';
+  echo 'Error al enviar el mensaje: ' . $mail->ErrorInfo;
 }
