@@ -1,0 +1,71 @@
+.form {
+  padding: 10px;
+  padding-top: 0;
+  margin: auto;
+}
+
+.form__label,
+.form__input-txt,
+.form__textarea,
+.link {
+  display: block;
+  width: 100%;
+  margin: 5px;
+}
+
+.form__input-txt {
+  padding: 5px;
+}
+
+.form__btn {
+  cursor: pointer;
+  font-size: 0.75em;
+  border: none;
+  display: inline;
+  margin: 5px;
+  width: 100%;
+}
+
+.link {
+  text-decoration: none;
+  color: rgba(210, 55, 10, 0.9);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.banner__img {
+  display: none;
+}
+
+.login {
+  margin-top: 365px;
+  margin-bottom: 172px;
+}
+
+.form__alert {
+  position: relative;
+  margin-left: 5px;
+  bottom: 5px;
+  height: 5px;
+  font-size: 11px;
+  color: red;
+  font-weight: bold;
+}
+
+h1.logo,
+.icon-phone,
+.icon-location {
+  color: black;
+}
+
+@media screen and (min-width:960px) {
+  .form__btn {
+    width: 100%;
+  }
+
+  .form__label,
+  .form__input-txt,
+  .form__textarea {
+    width: 100%;
+  }
+}

@@ -1,0 +1,134 @@
+.orders {
+  border: solid 2px rgba(210, 55, 10, 0.9);
+  border-radius: 10px;
+  width: 350px;
+  background-color: rgba(228, 99, 39, 0.5);
+  margin: 10px;
+  padding: 10px;
+  align-self: flex-start;
+}
+
+.ingredients {
+  border: solid 2px rgba(210, 55, 10, 0.9);
+  border-radius: 10px;
+  width: 350px;
+  background-color: rgba(228, 99, 39, 0.5);
+  margin: 10px;
+  padding: 10px;
+  align-self: flex-start;
+}
+
+.ingredients .group__title {
+  font-size: 20px;
+}
+
+.group__title {
+  margin: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(34, 34, 34, 0.8);
+  margin-left: 0px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8em;
+  margin: 2px;
+  margin-left: 0px;
+  border: solid 2px rgba(210, 55, 10, 0.9);
+  width: 100%;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.row--banner {
+  display: flex;
+  flex-direction: row;
+  border-top: solid 2px rgba(210, 55, 10, 0.9);
+  margin-left: 0px;
+  color: black;
+  font-weight: bold;
+  font-size: 0.8em;
+  margin: 2px;
+  margin-left: 0px;
+  width: 100%;
+  align-items: center;
+}
+
+.btn--orders {
+  margin-right: 2%;
+  cursor: pointer;
+  border: none;
+}
+
+.orders p {
+  margin-left: 10px;
+}
+
+.orders .row__txt {
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  width: 50px;
+}
+
+main .container--flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.btn--ingredients {
+  margin-right: 2%;
+  cursor: pointer;
+  border: none;
+}
+
+.ingredients p.row__txt {
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+  width: 80px;
+}
+
+.ingredients__amount__add {
+  width: 60px;
+  margin-right: 15px;
+  border: 2px solid rgba(210, 55, 10, 0.9);
+}
+
+.ingredients__amount__add--banner {
+  position: relative;
+  right: 5%
+}
+
+.show {
+  height: 234px;
+}
+
+
+@media screen and (min-width:720px) {
+  .orders {
+    width: 600px;
+  }
+
+  .ingredients {
+    width: 600px;
+  }
+
+  .ingredients p.row__txt {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    width: 150px;
+  }
+
+  .ingredients__amount__add--banner {
+    position: relative;
+    right: 10%
+  }
+}
