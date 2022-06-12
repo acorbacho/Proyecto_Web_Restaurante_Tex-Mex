@@ -24,7 +24,7 @@ class Controller {
       /**
        * Función ejecutada en la vista que añade una fila al carrito en la propia vista.
        */
-      this.view.newCartItem(this.handlerNewCartItem, this.cartItems())
+      this.view.newCartItem(this.handlerNewCartItem, this.showCartItems())
       /**
        * Función ejecutada en la vista que refresca los listener cuando hay un cambio en el carrito.
        */
@@ -35,7 +35,7 @@ class Controller {
        * base de datos, y también se le pasa el carrito para evaluar que tiene contenido y
        * no se ejecuta una petición vacía.
        */
-      this.view.createOrder(this.handlerCreateOrder, this.cartItems())
+      this.view.createOrder(this.handlerCreateOrder, this.showCartItems())
     } else {
       //FUNCIONES DEL PANEL DE ADMINISTRADOR.
 
@@ -66,8 +66,38 @@ class Controller {
   }
 
   /**
-   * Función que añade un item al carro del modelo, pasándole un índice como parámetro
-   * desde la vista. Devuelve el item.
+ * Devuelve el carrito. Se usa para las funciones de la vista que necesitan el carrito.
+ * @returns {Array} Carrito.
+ */
+  showCartItems = () => {
+    return this.model.cart
+  }
+
+  /**
+ * Función que se le pasa por parámetro (ejecutada), a la función de la vista
+ * que muestra los pedidos en curso en el panel de administrador. 
+ * Llama a la función del modelo que se encarga de cargar los pedidos de la db.
+ * @returns {Array} Array con los objetos "Order".
+ */
+  showOrders = () => {
+    return this.model.loadOrders()
+  }
+
+  /**
+ * Función que se le pasa por parámetro (ejecutada), a la función de la vista que 
+ * carga los ingredientes en el panel de administrador. Aquí ejecuta la función del modelo 
+ * que carga los ingredientes desde la db y se guarda el resultado en el array de ingredientes,
+ * retornando ese array de ingredientes.
+ * @returns {Array} Array de objetos ingrediente.
+ */
+  showIngredients = () => {
+    this.model.ingredients = this.model.loadIngredients()
+    return this.model.ingredients
+  }
+
+  /**
+   * Función que añade un ítem al carro del modelo, pasándole un índice como parámetro
+   * desde la vista. Devuelve el ítem.
    * @param {*} item_index Índice del ítem a insertar.
    * @returns {object} Objeto del carrito.
    */
@@ -76,7 +106,7 @@ class Controller {
   }
 
   /**
-   * Función que quita un item del carro del modelo, pasándole un índice como parámetro
+   * Función que quita un ítem del carro del modelo, pasándole un índice como parámetro
    * desde la vista.
    * @param {*} item_index Índice del ítem a remover.
    */
@@ -95,14 +125,6 @@ class Controller {
   }
 
   /**
-   * Devuelve el carrito. Se usa para las funciones de la vista que necesitan el carrito.
-   * @returns {Array} Carrito.
-   */
-  cartItems = () => {
-    return this.model.cart
-  }
-
-  /**
    * Función que se usa para crear la orden en el modelo, cuando se 
    * finaliza el pedido en la vista, pasando esta función por parámetro,
    * a la función de la vista que maneja el evento de creación de pedidos.
@@ -110,16 +132,6 @@ class Controller {
    */
   handlerCreateOrder = () => {
     return this.model.storageOrder()
-  }
-
-  /**
-   * Función que se le pasa por parámetro (ejecutada), a la función de la vista
-   * que muestra los pedidos en curso en el panel de administrador. 
-   * Llama a la función del modelo que se encarga de cargar los pedidos de la db.
-   * @returns {Array} Array con los objetos "Order".
-   */
-  showOrders = () => {
-    return this.model.loadOrders()
   }
 
   /**
@@ -135,18 +147,6 @@ class Controller {
   }
 
   /**
-   * Función que se le pasa por parámetro (ejecutada), a la función de la vista que 
-   * carga los ingredientes en el panel de administrador. Aquí ejecuta la función del modelo 
-   * que carga los ingredientes desde la db y se guarda el resultado en el array de ingredientes,
-   * retornando ese array de ingredientes.
-   * @returns {Array} Array de objetos ingrediente.
-   */
-  showIngredients = () => {
-    this.model.ingredients = this.model.loadIngredients()
-    return this.model.ingredients
-  }
-
-  /**
    * Esta función handler se le pasa por parámentro a la función de la vista que maneja
    * los eventos de añadir stock a los ingredientes desde la vista. Lo que hace es retornar
    * la ejecución del la función del modelo que es capaz de actualizar las cantidades desde
@@ -159,7 +159,6 @@ class Controller {
     return this.model.updateIngredients(name, amount)
   }
 }
-
 /**
  * Se lanza la aplicación
  * @type {Object}

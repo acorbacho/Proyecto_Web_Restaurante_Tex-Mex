@@ -63,7 +63,7 @@ if ($session != "admin") {
   </nav>
   <section class="banner">
     <img src="../assets/img/admin_panel/banner-admin_panel.jpg" alt="" class="banner__img">
-    <div class="banner__content">Administración de pedidos</div>
+    <div class="banner__content">Administración de pedidos e ingredientes</div>
   </section>
   <main class="main">
     <div class="container container--flex">
