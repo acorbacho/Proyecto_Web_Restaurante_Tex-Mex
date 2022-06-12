@@ -1,0 +1,95 @@
+.contact .container--flex {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-information {
+  padding: 10px;
+  padding-top: 0;
+  margin-bottom: 30px;
+  width: 300px;
+  align-self: flex-start;
+}
+
+.contact-information .column__title {
+  font-family: 'Pacifico', cursive;
+  font-weight: 100;
+}
+
+.contact-information [class*="icon-"] {
+  font-size: 1.1em;
+  margin-right: 7px;
+  position: relative;
+  top: 5px;
+}
+
+.contact-information .social-icon {
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.contact-information .social-icon [class*="icon-"] {
+  background: black;
+  color: white;
+  margin-left: 0;
+  margin-right: 15px;
+}
+
+.form {
+  padding: 10px;
+  padding-top: 0;
+  width: fit-content;
+}
+
+.form__label,
+.form__input-txt,
+.form__textarea {
+  display: block;
+  margin: 5px;
+  resize: none;
+  width: 300px;
+}
+
+.form__input-txt {
+  padding: 5px;
+}
+
+.form__btn {
+  cursor: pointer;
+  font-size: 0.75em;
+  border: none;
+  margin: 5px;
+  width: 300px;
+}
+
+@media screen and (min-width:960px) {
+  .container--flex {
+    justify-content: center;
+  }
+
+  .form__btn {
+    width: 400px;
+  }
+
+  .form__label,
+  .form__input-txt,
+  .form__textarea {
+    width: 400px;
+  }
+
+  .contact-information {
+    width: 400px;
+  }
+
+  .contact-information p {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width:1024px) {
+
+  .contact-information .column__title {
+    font-size: 1.5em;
+  }
+}
