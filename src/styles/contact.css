@@ -20,16 +20,14 @@
 .contact-information [class*="icon-"] {
   font-size: 1.1em;
   margin-right: 7px;
-  position: relative;
   top: 5px;
 }
 
-.contact-information .social-icon {
+.social-icon {
   justify-content: flex-start;
-  margin-bottom: 10px;
 }
 
-.contact-information .social-icon [class*="icon-"] {
+.social-icon [class*="icon-"] {
   background: black;
   color: white;
   margin-left: 0;

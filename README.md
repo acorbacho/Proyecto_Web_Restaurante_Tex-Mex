@@ -43,4 +43,8 @@ En este panel podremos administrar los **pedidos entrantes**, y los **productos 
 
 Los **pedidos entrantes**, se podrán aceptar, lo que hará que estos pedidos se eliminen de la **base de datos**, junto con la cantidad de **ingredientes** que se gastan.
 
+<<<<<<< HEAD
 También se podrá añadir una cantidad al ingrediente que se desee de la **base de datos** de **productos en stock**, mediante una columna que mostrará un listado de todos estos productos.
+=======
+También se podrá añadir una cantidad al ingrediente que se desee de la **base de datos** de **productos en stock**, mediante una columna que mostrará un listado de todos estos productos.
+>>>>>>> main
