@@ -496,7 +496,7 @@ h6 {
     padding-bottom: 50px;
   }
 
-  .social-icon {
+  .main-nav .social-icon {
     bottom: 47px;
     left: 760px;
     width: 20%;
@@ -521,7 +521,7 @@ h6 {
     height: 300px;
   }
 
-  .social-icon {
+  .main-nav .social-icon {
     left: 1120px;
   }
 }
