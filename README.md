@@ -45,7 +45,11 @@ Los **pedidos entrantes**, se podrán aceptar, lo que hará que estos pedidos se
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 También se podrá añadir una cantidad al ingrediente que se desee de la **base de datos** de **productos en stock**, mediante una columna que mostrará un listado de todos estos productos.
+=======
+También se podrá añadir una cantidad al ingrediente que se desee de la **base de datos** de **productos en stock**, mediante una columna que mostrará un listado de todos estos productos.
+>>>>>>> main
 =======
 También se podrá añadir una cantidad al ingrediente que se desee de la **base de datos** de **productos en stock**, mediante una columna que mostrará un listado de todos estos productos.
 >>>>>>> main
