@@ -89,7 +89,7 @@ class Model {
   }
 
   /**
-   * Función que almacena un pedido en la base de datos.
+   * Función que.
    * @param {*} _id ID de la orden.
    * @param {*} _username Nombre de usuario de la orden.
    * @returns {*} Mensaje de confirmación/error.

@@ -93,7 +93,7 @@ if ($session == null or $session = "") {
         </p>
       </div>
       <div class="column column--33">
-        <h2 class="column__title">Síguenos en nuestras redes</h2>
+        <h2 class="column__title">Sígenos en nuestras redes</h2>
         <p class="column__txt"><a href="https://www.facebook.com/" class="icon-facebook">Facebook</a></p>
         <p class="column__txt"><a href="https://twitter.com/home" class="icon-twitter">Twitter</a></p>
         <p class="column__txt"><a href="https://mail.google.com/mail/u/0/#inbox" class="icon-youtube">Youtube</a></p>
