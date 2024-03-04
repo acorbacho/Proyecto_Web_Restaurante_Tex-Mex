@@ -23,17 +23,6 @@
   top: 5px;
 }
 
-.social-icon {
-  justify-content: flex-start;
-}
-
-.social-icon [class*="icon-"] {
-  background: black;
-  color: white;
-  margin-left: 0;
-  margin-right: 15px;
-}
-
 .form {
   padding: 10px;
   padding-top: 0;
@@ -62,10 +51,6 @@
 }
 
 @media screen and (min-width:960px) {
-  .container--flex {
-    justify-content: center;
-  }
-
   .form__btn {
     width: 400px;
   }
@@ -86,7 +71,6 @@
 }
 
 @media screen and (min-width:1024px) {
-
   .contact-information .column__title {
     font-size: 1.5em;
   }
